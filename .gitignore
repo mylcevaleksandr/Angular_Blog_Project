@@ -29,6 +29,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
+/project/package-lock.json
 /frontend/package-lock.json
 .angular
 .sass-cache/
