@@ -1,0 +1,70 @@
+@import "../../../../assets/styles/variables";
+
+.footer {
+  background-color: $footer-background-color;
+  padding-top: 40px;
+  padding-bottom: 54px;
+
+  &_top {
+    display: flex;
+    margin-bottom: 40px;
+    align-items: center;
+
+    &-logo {
+      position: relative;
+      width: 85px;
+      height: 47px;
+      margin-right: 40px;
+    }
+
+    &-menu {
+      ul {
+        display: flex;
+        gap: 20px;
+
+        a {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 6px;
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+
+      &-title {
+        color: $title-text-color;
+        margin-bottom: 10px;
+      }
+
+      &-text {
+        width: 253px;
+        line-height: 20.8px;
+      }
+
+      &-social {
+        display: flex;
+        gap: 12px;
+      }
+
+      .btn {
+        font-size: 12px;
+        padding: 10px 20px 10px 20px;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &_copyright {
+    font-weight: 400;
+    color: $title-text-color;
+  }
+}

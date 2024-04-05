@@ -1,0 +1,46 @@
+@import "../../../../assets/styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &_logo {
+    position: relative;
+    width: 85px;
+    height: 47px;
+    margin-right: 100px;
+  }
+
+  &_menu {
+    ul {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+
+  &_actions {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0;
+
+    &-phone {
+      margin-right: 141px;
+      margin-top: 3px;
+      color: $title-text-color;
+    }
+
+    &-user {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+    }
+
+    &-text {
+      margin-top: 2px;
+    }
+  }
+}
