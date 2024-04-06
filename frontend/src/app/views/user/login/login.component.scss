@@ -1,0 +1,77 @@
+@import "../../../../assets/styles/mixins";
+
+.login {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 106px;
+    padding-right: 26px;
+    padding-bottom: 92px;
+    align-items: center;
+  }
+
+  &_form {
+    &-title {
+      @include head-lora-36;
+      margin-bottom: 40px;
+    }
+
+    &-inputs {
+      margin-bottom: 40px;
+
+      &-input {
+        display: flex;
+        flex-direction: column;
+
+        margin-bottom: 5px;
+
+        .input {
+          width: 422px;
+        }
+
+        span {
+          margin-top: 5px;
+          font-size: 14px;
+          color: red;
+        }
+      }
+    }
+
+    &-checkbox {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 400;
+
+      input {
+        display: flex;
+        accent-color: $title-text-color;
+      }
+    }
+
+    &-action {
+      margin-bottom: 10px;
+
+      .btn {
+        width: 422px;
+      }
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 14px;
+      color: $secondary-text-color;
+
+      a {
+        color: $title-text-color;
+      }
+    }
+  }
+
+  &_image {
+    position: relative;
+    width: 607px;
+    height: 390px;
+  }
+}

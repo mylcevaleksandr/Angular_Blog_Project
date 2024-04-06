@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    ReactiveFormsModule,
+    UserRoutingModule,
+    NgOptimizedImage
   ]
 })
 export class UserModule { }

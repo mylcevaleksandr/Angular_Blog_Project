@@ -35,11 +35,11 @@ export class AuthService {
     });
   }
 
-  signup(email: string, password: string, passwordRepeat: string): Observable<DefaultResponseType | LoginResponseType> {
+  signup(name: string, email: string, password: string): Observable<DefaultResponseType | LoginResponseType> {
     return this.http.post<DefaultResponseType | LoginResponseType>(`${environment.apiUrl}signup`, {
+      name,
       email,
-      password,
-      passwordRepeat,
+      password
     });
   }
 
@@ -63,8 +63,8 @@ export class AuthService {
     throw throwError(() => 'Can not use token');
   }
 
-  public getUser(): Observable<DefaultResponseType | UserResponseType>{
-return this.http.get<DefaultResponseType|UserResponseType>(`${environment.apiUrl}users`)
+  public getUser(): Observable<DefaultResponseType | UserResponseType> {
+    return this.http.get<DefaultResponseType | UserResponseType>(`${environment.apiUrl}users`);
   }
 
   public getIsLoggedIn(): boolean {
@@ -94,6 +94,14 @@ return this.http.get<DefaultResponseType|UserResponseType>(`${environment.apiUrl
 
   get userId(): string | null {
     return localStorage.getItem(this.userIdKey);
+  }
+
+  set userId(id: string | null) {
+    if (id) {
+      localStorage.setItem(this.userIdKey, id);
+    } else {
+      localStorage.removeItem(this.userIdKey);
+    }
   }
 
   get userName(): string | null {

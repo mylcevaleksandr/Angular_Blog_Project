@@ -1,1 +1,41 @@
-<p>login works!</p>
+<section class="login" [formGroup]="loginForm">
+  <div class="container">
+    <div class="login_form">
+      <div class="login_form-title">
+        Войти в личный кабинет
+      </div>
+      <div class="login_form-inputs">
+        <div class="login_form-inputs-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color':loginForm.get('email')?.invalid
+                 && (loginForm.get('email')?.dirty||loginForm.get('email')?.touched)?'red':''}"
+                 placeholder="Электронная почта" formControlName="email">
+          <span
+            *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty||loginForm.get('email')?.touched)">email example: bob@google.com</span>
+        </div>
+        <div class="login_form-inputs-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color':loginForm.get('password')?.invalid
+                 && (loginForm.get('password')?.dirty||loginForm.get('password')?.touched)?'red':''}"
+                 placeholder="Пароль" formControlName="password">
+          <span
+            *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty||loginForm.get('password')?.touched)">password is required</span>
+        </div>
+        <div class="login_form-checkbox">
+          <input type="checkbox" id="remember" formControlName="rememberMe">
+          <label for="remember">Запомнить меня</label>
+        </div>
+      </div>
+      <div class="login_form-action">
+        <button class="btn" [disabled]="loginForm.invalid" (click)="login()">Войти</button>
+      </div>
+      <div class="login_form-link">
+        Нет аккаунта?
+        <a routerLink="/signup">Пройдите регистрацию</a>
+      </div>
+    </div>
+    <div class="login_image">
+      <img [ngSrc]="'/assets/images/loginImage.png'" alt="login Image" fill="true" priority="true">
+    </div>
+  </div>
+</section>

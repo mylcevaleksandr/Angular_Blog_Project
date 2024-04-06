@@ -1,1 +1,51 @@
-<p>signup works!</p>
+<section class="signup" [formGroup]="signupForm">
+  <div class="container">
+    <div class="signup_form">
+      <div class="signup_form-title">
+        Регистрация на сайте
+      </div>
+      <div class="signup_form-inputs">
+        <div class="signup_form-inputs-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color':signupForm.get('userName')?.invalid
+                 && (signupForm.get('userName')?.dirty||signupForm.get('userName')?.touched)?'red':''}"
+                 placeholder="Ваше имя" formControlName="userName">
+          <span
+            *ngIf="signupForm.get('userName')?.invalid && (signupForm.get('userName')?.dirty||signupForm.get('userName')?.touched)">Допустимы только русские буквы и пробелы </span>
+        </div>
+        <div class="signup_form-inputs-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color':signupForm.get('email')?.invalid
+                 && (signupForm.get('email')?.dirty||signupForm.get('email')?.touched)?'red':''}"
+                 placeholder="Электронная почта" formControlName="email">
+          <span
+            *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty||signupForm.get('email')?.touched)">email example: bob@google.com</span>
+        </div>
+        <div class="signup_form-inputs-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color':signupForm.get('password')?.invalid
+                 && (signupForm.get('password')?.dirty||signupForm.get('password')?.touched)?'red':''}"
+                 placeholder="Пароль" formControlName="password">
+          <span
+            *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty||signupForm.get('password')?.touched)">Минимум 8 символов одна цифра и одна заглавная буква</span>
+        </div>
+        <div class="signup_form-checkbox">
+          <input type="checkbox" id="agree" formControlName="agree">
+          <label for="agree">
+            <span>Я принимаю <a href="">условия пользовательского соглашения </a></span>
+            <span> и даю <a href="">согласие на обработку персональных данных.</a></span>
+          </label>
+        </div>
+      </div>
+      <div class="signup_form-action">
+        <button class="btn" [disabled]="signupForm.invalid" (click)="signup()">Зарегистрироваться</button>
+      </div>
+      <div class="signup_form-link">Уже есть аккаунт?
+        <a routerLink="/signup">Войдите</a>
+      </div>
+    </div>
+    <div class="signup_image">
+      <img [ngSrc]="'/assets/images/signupImage.png'" alt="signup Image" fill="true" priority="true">
+    </div>
+  </div>
+</section>

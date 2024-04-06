@@ -13,7 +13,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 })
 export class HeaderComponent implements OnInit {
   public isLogged = false;
-  public user = 'alex';
+  public user = '';
 
   constructor(private authService: AuthService, private router: Router, private _snackBar: MatSnackBar) {
     this.isLogged = this.authService.getIsLoggedIn();
@@ -22,20 +22,31 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
+      console.log(this.isLogged);
+      if (this.isLogged) {
+        this.getUserInfo();
+      }
     });
-    if (this.isLogged){
-      this.authService.getUser().subscribe((data: DefaultResponseType | UserResponseType): void => {
-        if ((data as DefaultResponseType).error !== undefined) {
-          throw new Error((data as DefaultResponseType).message);
-        } else {
-          const response: UserResponseType = data as UserResponseType;
-          if (response.id && response.name && response.email) {
-            this.authService.setUserInfo(response.id, response.name, response.email);
-            this.user = this.authService.userName!;
-          }
-        }
-      });
+    if (this.isLogged && !this.authService.userName) {
+      this.getUserInfo();
+    } else {
+      this.user = this.authService.userName!;
     }
+  }
+
+  private getUserInfo() {
+    this.authService.getUser().subscribe((data: DefaultResponseType | UserResponseType): void => {
+      if ((data as DefaultResponseType).error !== undefined) {
+        throw new Error((data as DefaultResponseType).message);
+      } else {
+        const response: UserResponseType = data as UserResponseType;
+        if (response.id && response.name && response.email) {
+          this.authService.setUserInfo(response.id, response.name, response.email);
+          this.user = this.authService.userName!;
+          console.log(this.user);
+        }
+      }
+    });
   }
 
   public logout() {
