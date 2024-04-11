@@ -13,6 +13,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./core/auth/auth.interceptor";
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/materia
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    CarouselModule,
     HttpClientModule,
     MatSnackBarModule,
     AppRoutingModule,
     NgOptimizedImage,
-    BrowserAnimationsModule,
     MatMenuModule
   ],
   providers: [

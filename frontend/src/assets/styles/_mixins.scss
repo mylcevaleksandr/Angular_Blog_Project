@@ -8,12 +8,13 @@
   font-style: normal;
 }
 
-@mixin head-lora-32 {
-  color: $green-text-color;
+@mixin head-lora-50 {
+  color: #FFFFFF;
   font-family: 'Lora', serif;
-  font-size: 32px;
   font-style: normal;
   font-weight: 400;
+  font-size: 50px;
+  line-height: 65px;
 }
 
 @mixin head-lora-36 {
