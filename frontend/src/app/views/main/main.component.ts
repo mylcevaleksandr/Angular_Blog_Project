@@ -6,7 +6,7 @@ import {OwlOptions} from "ngx-owl-carousel-o";
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  customOptionsServices: OwlOptions = {
+  customOptionsOffer: OwlOptions = {
     loop: true,
     autoplay: true,
     mouseDrag: false,

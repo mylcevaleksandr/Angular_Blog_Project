@@ -1,0 +1,23 @@
+@import "../../../assets/styles/mixins";
+
+.agree {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__user, &__personal {
+    @include head-lora-36;
+    margin-bottom: 15px;
+    margin-top: 50px;
+  }
+
+  h3 {
+    @include head-lora-26;
+    margin-top: 50px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+}

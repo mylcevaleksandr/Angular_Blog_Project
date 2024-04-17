@@ -1,14 +1,14 @@
 @import "../../../assets/styles/variables";
 @import "../../../assets/styles/mixins";
 
-.services {
+.offer {
   margin-bottom: 120px;
 
   .container {
     background-color: red;
   }
 
-  .services__carousel {
+  .offer__carousel {
     position: relative;
 
     .prev {
@@ -25,7 +25,7 @@
       top: 234px;
     }
 
-    .services__item {
+    .offer__item {
       background-color: #709FDC;
       position: relative;
       display: flex;
@@ -94,5 +94,4 @@
     }
 
   }
-
 }

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {CallMeDialogComponent} from "../../components/call-me-dialog/call-me-dialog.component";
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  constructor(private dialog: MatDialog) {
+  }
+
+  public openDialog(): void {
+    this.dialog.open(CallMeDialogComponent);
+  }
 }

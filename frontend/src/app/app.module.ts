@@ -14,6 +14,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptor} from "./core/auth/auth.interceptor";
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 import {CarouselModule} from "ngx-owl-carousel-o";
+import {AgreeComponent} from './views/agree/agree.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -21,9 +24,11 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    AgreeComponent
   ],
   imports: [
+
     BrowserModule,
     BrowserAnimationsModule,
     CarouselModule,
@@ -31,7 +36,9 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     MatSnackBarModule,
     AppRoutingModule,
     NgOptimizedImage,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    FormsModule,
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},

@@ -1,0 +1,36 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.callMeDialog {
+  padding: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1.5px solid $title-text-color;
+  border-radius: 10px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #FFFFFF;
+
+  svg {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    @include head-lora-38;
+  }
+
+  .input {
+    margin: 5px 0px;
+    width: 422px;
+  }
+
+  .btn {
+    width: 422px;
+    margin-top: 15px;
+  }
+}

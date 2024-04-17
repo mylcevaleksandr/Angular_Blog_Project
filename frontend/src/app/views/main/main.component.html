@@ -1,9 +1,9 @@
-<section class="services" id="services">
+<section class="offer" id="offer">
   <div class="container">
-    <div class="services__carousel">
-      <a class="prev" (click)="owlCarServ.prev()"
+    <div class="offer__carousel">
+      <a class="prev" (click)="owlCarOffer.prev()"
          [tabindex]="0"
-         (keyup)="owlCarServ.prev()">
+         (keyup)="owlCarOffer.prev()">
         <svg width="15" height="28" viewBox="0 0 15 28" fill="none" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect x="15" width="28" height="15" transform="rotate(90 15 0)" fill="url(#pattern0_9054_355)"/>
@@ -16,59 +16,59 @@
           </defs>
         </svg>
       </a>
-      <owl-carousel-o [options]="customOptionsServices" #owlCarServ>
+      <owl-carousel-o [options]="customOptionsOffer" #owlCarOffer>
         <ng-template carouselSlide>
-          <div class="services__item">
-            <div class="services__item-circle"></div>
-            <div class="services__item_info">
-              <div class="services__item_info-type">Предложение месяца</div>
-              <div class="services__item_info-offer">Продвижение в Instagram для вашего бизнеса <span>-15%!</span></div>
-              <div class="services__item_info-action">
+          <div class="offer__item">
+            <div class="offer__item-circle"></div>
+            <div class="offer__item_info">
+              <div class="offer__item_info-type">Предложение месяца</div>
+              <div class="offer__item_info-offer">Продвижение в Instagram для вашего бизнеса <span>-15%!</span></div>
+              <div class="offer__item_info-action">
                 <button class="btn">Подробнее</button>
               </div>
             </div>
-            <div class="services__item-image">
-              <img [ngSrc]="'./assets/images/services/services-image.png'" alt="service carousel image" fill="true"
+            <div class="offer__item-image">
+              <img [ngSrc]="'./assets/images/offer/offer-image.png'" alt="offer carousel image" fill="true"
                    priority="true"></div>
           </div>
         </ng-template>
         <ng-template carouselSlide>
-          <div class="services__item">
-            <div class="services__item-circle"></div>
-            <div class="services__item_info">
-              <div class="services__item_info-type">Акция</div>
-              <div class="services__item_info-offer">Нужен грамотный <span> копирайтер</span>?</div>
-              <div class="services__item_info-text">Весь декабрь у нас действует акция на работу копирайтера.</div>
-              <div class="services__item_info-action">
+          <div class="offer__item">
+            <div class="offer__item-circle"></div>
+            <div class="offer__item_info">
+              <div class="offer__item_info-type">Акция</div>
+              <div class="offer__item_info-offer">Нужен грамотный <span> копирайтер</span>?</div>
+              <div class="offer__item_info-text">Весь декабрь у нас действует акция на работу копирайтера.</div>
+              <div class="offer__item_info-action">
                 <button class="btn">Подробнее</button>
               </div>
             </div>
-            <div class="services__item-image">
-              <img [ngSrc]="'./assets/images/services/services-image-2.png'" alt="service carousel image" fill="true"
+            <div class="offer__item-image">
+              <img [ngSrc]="'./assets/images/offer/offer-image-2.png'" alt="offer carousel image" fill="true"
                    priority="true">
             </div>
           </div>
         </ng-template>
         <ng-template carouselSlide>
-          <div class="services__item">
-            <div class="services__item-circle"></div>
-            <div class="services__item_info">
-              <div class="services__item_info-type">Новость дня</div>
-              <div class="services__item_info-offer"><span>6 место</span> в ТОП-10 <br>
+          <div class="offer__item">
+            <div class="offer__item-circle"></div>
+            <div class="offer__item_info">
+              <div class="offer__item_info-type">Новость дня</div>
+              <div class="offer__item_info-offer"><span>6 место</span> в ТОП-10 <br>
                 SMM-агенств Москвы!
               </div>
-              <div class="services__item_info-text">Мы благодарим каждого, кто голосовал за нас!</div>
-              <div class="services__item_info-action">
+              <div class="offer__item_info-text">Мы благодарим каждого, кто голосовал за нас!</div>
+              <div class="offer__item_info-action">
                 <button class="btn">Подробнее</button>
               </div>
             </div>
-            <div class="services__item-image">
-              <img [ngSrc]="'./assets/images/services/services-image-3.png'" alt="service carousel image" fill="true"
+            <div class="offer__item-image">
+              <img [ngSrc]="'./assets/images/offer/offer-image-3.png'" alt="offer carousel image" fill="true"
                    priority="true"></div>
           </div>
         </ng-template>
       </owl-carousel-o>
-      <a class="next" (click)="owlCarServ.next()" [tabindex]="0" (keyup)="owlCarServ.next()">
+      <a class="next" (click)="owlCarOffer.next()" [tabindex]="0" (keyup)="owlCarOffer.next()">
         <svg width="15" height="28" viewBox="0 0 15 28" fill="none" xmlns="http://www.w3.org/2000/svg"
              xmlns:xlink="http://www.w3.org/1999/xlink">
           <rect y="28" width="28" height="15" transform="rotate(-90 0 28)" fill="url(#pattern0_9054_350)"/>
