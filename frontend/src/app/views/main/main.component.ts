@@ -1,11 +1,17 @@
 import {Component} from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
+import {MatDialog} from "@angular/material/dialog";
+import {OrderOfferDialogComponent} from "../../shared/components/order-offer-dialog/order-offer-dialog.component";
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
+  constructor(private dialog: MatDialog) {
+  }
+
   customOptionsOffer: OwlOptions = {
     loop: true,
     autoplay: true,
@@ -30,4 +36,9 @@ export class MainComponent {
     nav: false,
   };
 
+  public orderService(serviceType: string) {
+    this.dialog.open(OrderOfferDialogComponent, {
+      data: {serviceType}
+    });
+  }
 }

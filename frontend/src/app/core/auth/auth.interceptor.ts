@@ -16,7 +16,7 @@ export class AuthInterceptor implements HttpInterceptor {
     // private loader: LoaderService,
     private router: Router,
   ) {
-    console.log('called');
+    // console.log('called');
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {

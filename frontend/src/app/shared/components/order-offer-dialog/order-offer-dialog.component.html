@@ -1,0 +1,23 @@
+<div class="dialog" [formGroup]="serviceForm">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+       (click)="dialogRef.close()">
+    <line x1="1.93562" y1="2.64999" x2="13.9564" y2="14.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+    <line x1="13.9236" y1="2.62978" x2="1.90277" y2="14.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+  </svg>
+
+  <h1 class="dialog__title">Заявка на услугу</h1>
+  <select name="" id="offers" #serviceSelect class="input">
+    <option value="{{service.name}}" [selected]="service.url===serviceType.serviceType"
+            *ngFor="let service of services; let i = index ">{{service.name}}</option>
+  </select>
+  <input type="text" class="input" placeholder="Ваше имя"
+         [ngStyle]="{'border-color':serviceForm.get('userName')?.invalid
+                 && (serviceForm.get('userName')?.dirty||serviceForm.get('userName')?.touched)?'red':''}"
+         formControlName="userName">
+  <input type="tel" class="input" placeholder="Ваш номер телефона"
+         [ngStyle]="{'border-color':serviceForm.get('phone')?.invalid
+                 && (serviceForm.get('phone')?.dirty||serviceForm.get('phone')?.touched)?'red':''}"
+         formControlName="phone">
+  <button class="btn" (click)="serviceRequest()">Заказать звонок</button>
+  <div class="input error" *ngIf="requestError===true">Произошла ошибка при отправке формы, попробуйте еще раз</div>
+</div>

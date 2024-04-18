@@ -1,0 +1,17 @@
+@import "../../../../assets/styles/dialog";
+
+.dialog {
+  &__text {
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  & .btn {
+    width: 73px;
+    padding: 10px 20px 10px 20px;
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+}
+
