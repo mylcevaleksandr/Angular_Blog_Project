@@ -3,19 +3,20 @@ import {Observable} from "rxjs";
 import {DefaultResponseType} from "../../../types/default-response.type";
 import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {RequestServiceResponseType} from "../../../types/request-service-response.type";
+import {CategoriesResponseType} from "../../../types/categories-response.type";
 
 @Injectable({
   providedIn: 'root'
 })
-export class OfferService {
+export class CategoriesService {
 
   constructor(private http: HttpClient) {
   }
 
-  public getServices(): Observable<RequestServiceResponseType[]> {
-    return this.http.get<RequestServiceResponseType[]>(`${environment.apiUrl}categories`);
+  public getCategories(): Observable<CategoriesResponseType[]> {
+    return this.http.get<CategoriesResponseType[]>(`${environment.apiUrl}categories`);
   }
+
 
   public requestService(name: string, phone: string, service: string, type: string): Observable<DefaultResponseType> {
     return this.http.post<DefaultResponseType>(`${environment.apiUrl}requests`, {

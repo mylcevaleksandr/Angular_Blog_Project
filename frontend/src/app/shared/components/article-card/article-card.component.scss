@@ -1,0 +1,48 @@
+@import "../../../../assets/styles/variables";
+
+.article {
+  width: 292px;
+  height: 571px;
+  display: flex;
+  flex-direction: column;
+
+
+  &__image {
+    background-size: cover;
+    background-position: center;
+    width: 291px;
+    height: 291px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  &__category {
+    position: absolute;
+    background-color: #FFFFFF;
+    top: 10px;
+    right: 9px;
+    padding: 10px 18px 10px 18px;
+    border-radius: 5px;
+    font-size: 11px;
+    color: $title-text-color;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: $title-text-color;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18.2px;
+    flex-grow: 1;
+  }
+
+  &__action {
+    color: $title-text-color;
+    text-decoration: underline;
+  }
+}

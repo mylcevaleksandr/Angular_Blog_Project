@@ -1,0 +1,85 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.blog {
+  margin-top: 80px;
+  margin-bottom: 120px;
+
+  &-title {
+    @include head-lora-38;
+    margin-bottom: 40px;
+  }
+
+  &__filter {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &_categories {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-grow: 1;
+      margin-right: 30px;
+      flex-wrap: wrap;
+
+      &-category {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: $title-text-color;
+        font-weight: 400;
+        padding: 8px 20px 8px 20px;
+        border-radius: 5px;
+        border: 1.5px solid $title-text-color;
+
+        svg {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &_dropdown {
+      &-head {
+        font-weight: 400;
+        width: 148px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+      }
+
+      &.open &-head {
+        width: 257px;
+        border-radius: 5px 5px 0px 0px;
+        padding: 12px 23px;
+        background-color: $footer-background-color;
+      }
+
+      &-body {
+        display: none;
+
+        &--category {
+          font-weight: 400;
+          color: $gray-filter-color;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+      }
+
+      &.open &-body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+        padding: 12px 23px;
+        border: 1.5px solid $footer-background-color;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
+  .selected {
+    color: $main-text-color;
+  }
+}

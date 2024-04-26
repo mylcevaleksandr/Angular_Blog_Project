@@ -16,6 +16,9 @@ import {CarouselModule} from "ngx-owl-carousel-o";
 import {AgreeComponent} from './views/agree/agree.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {FormsModule} from "@angular/forms";
+import { ArticleComponent } from './views/article/article.component';
+import { BlogComponent } from './views/blog/blog.component';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import {FormsModule} from "@angular/forms";
     HeaderComponent,
     FooterComponent,
     MainComponent,
-    AgreeComponent
+    AgreeComponent,
+    ArticleComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +43,7 @@ import {FormsModule} from "@angular/forms";
     MatMenuModule,
     MatDialogModule,
     FormsModule,
+    SharedModule,
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},

@@ -7,7 +7,7 @@ import {DefaultResponseType} from '../../../types/default-response.type';
 import {LoginResponseType} from '../../../types/login-response.type';
 import {TokenType} from '../../../types/token.type';
 
-// import { LoaderService } from '../../shared/services/loader.service';
+// import { LoaderService } from '../../shared/service/loader.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

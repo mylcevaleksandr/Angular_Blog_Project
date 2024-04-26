@@ -1,0 +1,8 @@
+<div class="article">
+  <div class="article__image" style="background-image: url('/assets/images/popular/{{article.image}}')">
+    <div class="article__category">{{article.category}}</div>
+  </div>
+  <div class="article__title">{{article.title}}</div>
+  <div class="article__text">{{article.description}}</div>
+  <a class="article__action" (click)="readMore(article.url)">Читать дальше</a>
+</div>

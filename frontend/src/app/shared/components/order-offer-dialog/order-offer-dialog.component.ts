@@ -1,8 +1,8 @@
 import {Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {OfferService} from "../../services/offer.service";
+import {CategoriesService} from "../../services/categories.service";
 import {DialogDataType} from "../../../../types/dialog-data.type";
-import {RequestServiceResponseType} from "../../../../types/request-service-response.type";
+import {CategoriesResponseType} from "../../../../types/categories-response.type";
 import {CommonModule} from "@angular/common";
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {DefaultResponseType} from "../../../../types/default-response.type";
@@ -23,18 +23,18 @@ export class OrderOfferDialogComponent implements OnInit {
   public name: string = '';
   public phone: string = '';
   @ViewChild('serviceSelect') serviceSelect!: ElementRef;
-  public services: RequestServiceResponseType[] | null = null;
+  public services: CategoriesResponseType[] | null = null;
   public requestError: boolean = false;
 
   constructor(private dialog: MatDialog,
               public dialogRef: MatDialogRef<OrderOfferDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public serviceType: DialogDataType,
               private fb: FormBuilder,
-              private orderService: OfferService) {
+              private categoriesService: CategoriesService) {
   }
 
   public serviceRequest(): void {
-    this.orderService.requestService(this.serviceForm.value.userName!, this.serviceForm.value.phone!, this.serviceSelect.nativeElement.value, 'order').subscribe({
+    this.categoriesService.requestService(this.serviceForm.value.userName!, this.serviceForm.value.phone!, this.serviceSelect.nativeElement.value, 'order').subscribe({
       next: (data: DefaultResponseType) => {
         console.log(data);
         if (!(data as DefaultResponseType).error) {
@@ -53,7 +53,7 @@ export class OrderOfferDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.orderService.getServices().subscribe((data: RequestServiceResponseType[]) => {
+    this.categoriesService.getCategories().subscribe((data: CategoriesResponseType[]) => {
       this.services = data;
     });
   }

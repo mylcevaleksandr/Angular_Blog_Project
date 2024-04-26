@@ -4,10 +4,6 @@
 .offer {
   margin-bottom: 120px;
 
-  .container {
-    background-color: red;
-  }
-
   .offer__carousel {
     position: relative;
 
@@ -95,3 +91,276 @@
 
   }
 }
+
+.service {
+  margin-bottom: 120px;
+
+  &__title {
+    @include head-lora-38;
+    margin-bottom: 40px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+
+    &_card {
+      display: flex;
+      flex-direction: column;
+      width: 290px;
+      height: 498px;
+
+      &-image {
+        position: relative;
+        width: 291px;
+        min-height: 291px;
+        border-radius: 5px;
+      }
+
+      &-title {
+        color: $title-text-color;
+        font-size: 20px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      &-text {
+        flex-grow: 1;
+        font-size: 14px;
+        line-height: 18.2px;
+        font-weight: 400;
+      }
+
+      &-extra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-price {
+          font-size: 20px;
+          font-weight: 600;
+          color: $title-text-color;
+        }
+      }
+    }
+  }
+}
+
+.about {
+  display: flex;
+  margin-bottom: 120px;
+
+  &__image {
+    position: relative;
+    min-width: 460px;
+    height: 453px;
+    border-radius: 5px;
+  }
+
+  &__content {
+    margin-left: 68px;
+
+    &-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    &-article {
+      margin-bottom: 40px;
+      width: 633px;
+      font-size: 14px;
+
+      span {
+        font-weight: 400;
+      }
+    }
+
+    &_advantages {
+      &-title {
+        @include head-lora-26;
+        margin-bottom: 20px;
+        color: $title-text-color;
+      }
+
+      &-cards {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        column-gap: 71px;
+
+        .advantage {
+          width: 316px;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+
+          &-number {
+            min-width: 40px;
+            text-align: center;
+            @include head-lora-50;
+            position: relative;
+            color: $title-text-color;
+
+            .number {
+              position: relative;
+              z-index: 1;
+            }
+
+            .circle {
+              position: absolute;
+              z-index: 0;
+              width: 40px;
+              height: 40px;
+              left: 0;
+              bottom: 5px;
+              border-radius: 50%;
+              background-color: $footer-background-color;
+            }
+          }
+
+          &-text {
+            font-size: 14px;
+            font-weight: 400;
+
+            span {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.popular {
+  margin-bottom: 120px;
+
+  &__title {
+    @include head-lora-38;
+    margin-bottom: 40px;
+  }
+
+  &__articles {
+    display: flex;
+    column-gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  &__action {
+    text-align: right;
+
+    .action {
+      font-size: 20px;
+      color: $title-text-color;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      svg {
+        margin-left: 14px;
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+  padding-left: 1px;
+
+  &__title {
+    @include head-lora-38;
+    margin-bottom: 20px;
+  }
+
+  &__carousel {
+    position: relative;
+
+    .prev {
+      cursor: pointer;
+      position: absolute;
+      top: 122px;
+      left: -20px;
+    }
+
+    .next {
+      cursor: pointer;
+      position: absolute;
+      right: -20px;
+      top: 122px;
+    }
+
+    .review {
+      width: 396px;
+      height: 267px;
+      padding: 30px;
+      border: 1.5px solid $title-text-color;
+      border-radius: 5px;
+      box-sizing: border-box;
+
+      &__head {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+
+        &-image {
+          position: relative;
+          width: 60px;
+          height: 60px;
+        }
+
+        &-name {
+          margin-left: 26px;
+          color: $title-text-color;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+
+      &-text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22.4px;
+      }
+    }
+  }
+}
+
+.contacts {
+  display: flex;
+  column-gap: 26px;
+  padding-right: 106px;
+  box-sizing: border-box;
+  margin-bottom: 120px;
+
+  &__map {
+    flex-grow: 1;
+  }
+
+  &__info {
+    width: 501px;
+
+    &-header {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      font-size: 20px;
+      color: $title-text-color;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    &-social {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
+

@@ -46,7 +46,7 @@ ul, li {
   list-style: none;
 }
 
-body {
+html, body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -67,7 +67,6 @@ a {
   background-color: $title-text-color;
   padding: 15px 40px 15px 40px;
   border-radius: 5px;
-  width: 163px;
   color: #FFFFFF;
   box-sizing: border-box;
   cursor: pointer;
@@ -89,7 +88,8 @@ a {
     font-size: 14px;
     color: $placeholder-color;
   }
-  &.error{
+
+  &.error {
     text-align: center;
     color: red;
     border-color: red;
@@ -99,10 +99,6 @@ a {
 .container {
   max-width: 1240px;
   margin: 0 auto;
-}
-
-html, body {
-  height: 100%;
 }
 
 .owl-theme .owl-nav.disabled + .owl-dots {
@@ -129,4 +125,5 @@ html, body {
 
 .mat-mdc-dialog-container .mdc-dialog__surface {
   border-radius: 10px !important;
-background-color: transparent !important;}
+  background-color: transparent !important;
+}

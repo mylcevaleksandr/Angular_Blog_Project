@@ -1,29 +1,28 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {CallMeDialogComponent} from './components/call-me-dialog/call-me-dialog.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {OrderOfferDialogComponent} from './components/order-offer-dialog/order-offer-dialog.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {BrowserModule} from "@angular/platform-browser";
-import { OkDialogComponent } from './components/ok-dialog/ok-dialog.component';
+import {OkDialogComponent} from './components/ok-dialog/ok-dialog.component';
+import {ServiceCardComponent} from './components/service-card/service-card.component';
+import {ArticleCardComponent} from './components/article-card/article-card.component';
 
 
 @NgModule({
   declarations: [
-    CallMeDialogComponent,
-    OrderOfferDialogComponent,
-    OkDialogComponent
+    OkDialogComponent,
+    ServiceCardComponent,
+    ArticleCardComponent
   ],
-    imports: [
-        BrowserModule,
-        CommonModule,
-        FormsModule,
-        MatMenuModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    MatMenuModule,
+    ReactiveFormsModule
+  ],
   exports: [
-    CallMeDialogComponent,
-    OrderOfferDialogComponent
+    ArticleCardComponent
   ]
 })
 export class SharedModule {

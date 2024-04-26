@@ -4,6 +4,8 @@ import {LayoutComponent} from "./shared/layout/layout.component";
 import {MainComponent} from "./views/main/main.component";
 import {authForwardGuard} from "./core/auth/auth-forward.guard";
 import {AgreeComponent} from "./views/agree/agree.component";
+import {ArticleComponent} from "./views/article/article.component";
+import {BlogComponent} from "./views/blog/blog.component";
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
       {
         path: 'agree',
         component: AgreeComponent
+      },
+      {
+        path: 'article',
+        component: ArticleComponent
+      },
+      {
+        path: 'blog',
+        component: BlogComponent
       }
     ]
   }
