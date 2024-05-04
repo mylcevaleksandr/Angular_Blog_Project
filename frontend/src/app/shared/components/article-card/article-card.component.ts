@@ -14,7 +14,6 @@ export class ArticleCardComponent {
   }
 
   public readMore(url: string): void {
-    console.log(url);
     this.router.navigate(
       ['/article'],
       {

@@ -40,9 +40,10 @@ $IT_Logia_Diploma-theme: mat.define-light-theme((
   padding: 0;
   border: 0;
   outline: none;
+  scroll-behavior: smooth;
 }
 
-ul, li {
+li {
   list-style: none;
 }
 
@@ -88,12 +89,15 @@ a {
     font-size: 14px;
     color: $placeholder-color;
   }
+}
 
-  &.error {
-    text-align: center;
-    color: red;
-    border-color: red;
-  }
+.error {
+  color: red;
+  border-color: red;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width: 422px;
+  text-align: center;
 }
 
 .container {
@@ -127,3 +131,38 @@ html, body {
   border-radius: 10px !important;
   background-color: transparent !important;
 }
+
+.article__content_main-text {
+  h1 {
+    color: $title-text-color;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  h3 {
+    color: $title-text-color;
+    font-size: 20px;
+    padding-top: 20px;
+    font-weight: 500;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  b {
+    font-size: 14px;
+  }
+
+  li {
+    list-style: revert;
+    font-size: 14px;
+    margin-left: 20px;
+    font-weight: 400;
+  }
+}
+
+

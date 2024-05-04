@@ -4,14 +4,15 @@
     <div class="blog__filter_categories">
       <div class="blog__filter_categories-category" *ngFor="let category of activeCategories">
         <span>{{category.name}}</span>
-        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+             (click)="applyFilter(category.url)">
           <line x1="0.935531" y1="1.15002" x2="12.9563" y2="13.1708" stroke="#709FDC" stroke-linecap="round"/>
           <line x1="12.9236" y1="1.12984" x2="0.902784" y2="13.1507" stroke="#709FDC" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
     <div class="blog__filter_dropdown" [class.open]="open">
-      <div class="blog__filter_dropdown-head" (click)="toggle()" [tabindex]="0"
+      <div class="blog__filter_dropdown-head" (click)="toggle()" (blur)="toggle()" [tabindex]="0"
            (keyup)="toggle()">
         <span>Фильтр</span>
         <svg *ngIf="!open" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,5 +39,35 @@
   <div class="blog__articles">
     <app-article-card *ngFor="let article of blogArticles" [article]="article"></app-article-card>
   </div>
-  <div class="blog__pagination"></div>
+  <div class="blog__pagination" *ngIf="pages.length>1">
+    <div class="pagination-arrow"
+         (click)="openPrevPage()"
+         [tabindex]="0"
+         (keyup)="openPrevPage()"
+         [class.disabled]="activeParams.page?activeParams.page===1:true">
+      <img ngSrc="../../../assets/images/previous.png" fill="true" priority="false" alt="arrow"
+           *ngIf="activeParams.page===1">
+      <img ngSrc="../../../assets/images/previous-1.png" fill="true" priority="false" alt="arrow"
+           *ngIf="activeParams.page!==1">
+    </div>
+    <div class="pagination-pages">
+      <a class="pagination-page"
+         [class.active]="this.activeParams.page? this.activeParams.page===activePage:(activePage===1)"
+         *ngFor="let activePage of pages"
+         (click)="openPage(activePage)"
+         [tabindex]="0"
+         (keyup)="openPage(activePage)"
+      >{{activePage}}</a>
+    </div>
+    <div class="pagination-arrow"
+         (click)="openNextPage()"
+         [tabindex]="0"
+         (keyup)="openNextPage()"
+         [class.disabled]="activeParams.page?activeParams.page===pages.length:false">
+      <img ngSrc="../../../assets/images/next.png" fill="true" priority="false" alt="arrow"
+           *ngIf="activeParams.page!==pages.length">
+      <img ngSrc="../../../assets/images/next-1.png" fill="true" priority="false" alt="arrow"
+           *ngIf="activeParams.page===pages.length">
+    </div>
+  </div>
 </section>

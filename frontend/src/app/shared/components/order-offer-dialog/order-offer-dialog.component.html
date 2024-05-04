@@ -14,10 +14,12 @@
          [ngStyle]="{'border-color':serviceForm.get('userName')?.invalid
                  && (serviceForm.get('userName')?.dirty||serviceForm.get('userName')?.touched)?'red':''}"
          formControlName="userName">
+  <div class="error" *ngIf="serviceForm.get('userName')?.invalid">Поле не может быть пустым</div>
   <input type="tel" class="input" placeholder="Ваш номер телефона"
          [ngStyle]="{'border-color':serviceForm.get('phone')?.invalid
                  && (serviceForm.get('phone')?.dirty||serviceForm.get('phone')?.touched)?'red':''}"
          formControlName="phone">
-  <button class="btn" (click)="serviceRequest()">Заказать звонок</button>
-  <div class="input error" *ngIf="requestError===true">Произошла ошибка при отправке формы, попробуйте еще раз</div>
+  <div class="error" *ngIf="serviceForm.get('phone')?.invalid">Поле не может быть пустым</div>
+  <button class="btn" (click)="serviceRequest()" [disabled]="serviceForm.invalid">Заказать звонок</button>
+  <div class="error" *ngIf="requestError===true">Произошла ошибка при отправке формы, попробуйте еще раз</div>
 </div>

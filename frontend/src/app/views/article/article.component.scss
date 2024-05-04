@@ -1,0 +1,129 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+
+.article {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  &__head {
+    margin-bottom: 60px;
+
+    &_name {
+      color: $title-text-color;
+      margin-bottom: 60px;
+
+      span {
+        color: $footer-background-color;
+        font-weight: 400;
+      }
+    }
+
+    &_content {
+      display: flex;
+
+      &-text {
+        width: 607px;
+        margin-right: 106px;
+
+        &--title {
+          @include head-lora-38;
+          margin-bottom: 40px;
+        }
+
+        &--description {
+          font-weight: 400;
+          font-size: 20px;
+          color: $title-text-color;
+        }
+      }
+
+      &-image {
+        position: relative;
+        width: 527px;
+        height: 320px;
+
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 130px;
+
+    &_main {
+      &-social {
+        display: flex;
+        padding-top: 40px;
+        margin-bottom: 60px;
+
+        &--text {
+          display: flex;
+          font-size: 14px;
+          margin-right: 20px;
+          color: $title-text-color;
+        }
+
+        &--links {
+          display: flex;
+          gap: 13px;
+          align-items: center;
+        }
+      }
+
+      &-comments {
+        &--title {
+          @include head-lora-38;
+          margin-bottom: 20px;
+        }
+
+        &--login {
+          font-size: 14px;
+          font-weight: 400;
+
+          a {
+            color: $title-text-color;
+          }
+        }
+
+        &--allowed {
+          textarea {
+            margin-bottom: 20px;
+            width: 818px;
+            height: 248px;
+            border-radius: 3px;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1.5px solid $title-text-color;
+            font-size: 14px;
+            font-weight: 400;
+
+            &::placeholder {
+              color: $placeholder-color;
+            }
+          }
+        }
+      }
+    }
+
+    &_related {
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+
+      &-title {
+        @include head-lora-26;
+        color: $title-text-color;
+        margin-bottom: 20px;
+      }
+
+      .article-card {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+

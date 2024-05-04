@@ -19,7 +19,7 @@
     &_categories {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 30px;
       flex-grow: 1;
       margin-right: 30px;
       flex-wrap: wrap;
@@ -45,6 +45,7 @@
         font-weight: 400;
         width: 148px;
         display: flex;
+        box-sizing: border-box;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
@@ -79,7 +80,56 @@
       }
     }
   }
+
+  &__articles {
+    display: flex;
+    column-gap: 24px;
+    row-gap: 40px;
+    flex-wrap: wrap;
+  }
+
   .selected {
     color: $main-text-color;
+  }
+
+  &__pagination {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .pagination-arrow {
+      cursor: pointer;
+      display: flex;
+      position: relative;
+      width: 10px;
+      height: 19px;
+
+      &.disabled {
+        cursor: not-allowed;
+      }
+    }
+
+    .pagination-pages {
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+      margin-right: 40px;
+      column-gap: 20px;
+
+      .pagination-page {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+        font-weight: 400;
+
+        &.active {
+          color: $footer-background-color;
+        }
+      }
+    }
   }
 }
