@@ -6,13 +6,15 @@ import {BrowserModule} from "@angular/platform-browser";
 import {OkDialogComponent} from './components/ok-dialog/ok-dialog.component';
 import {ServiceCardComponent} from './components/service-card/service-card.component';
 import {ArticleCardComponent} from './components/article-card/article-card.component';
+import {CommentComponent} from './components/comment/comment.component';
 
 
 @NgModule({
   declarations: [
     OkDialogComponent,
     ServiceCardComponent,
-    ArticleCardComponent
+    ArticleCardComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import {ArticleCardComponent} from './components/article-card/article-card.compo
     ReactiveFormsModule
   ],
   exports: [
-    ArticleCardComponent
+    ArticleCardComponent,
+    CommentComponent
   ]
 })
 export class SharedModule {

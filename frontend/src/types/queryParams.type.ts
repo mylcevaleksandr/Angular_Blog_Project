@@ -2,5 +2,8 @@ export type QueryParamsType =
   {
     categories?: string[],
     page?: number,
-    url?: string
+    url?: string,
+    articleId?: string,
+    offset?:number,
+    article?:string
   }

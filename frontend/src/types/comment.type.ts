@@ -7,5 +7,6 @@ export type CommentType =
     date: string,
     likesCount: number,
     dislikesCount: number,
-    user: UserResponseType
+    user: UserResponseType,
+   action?:string
   }

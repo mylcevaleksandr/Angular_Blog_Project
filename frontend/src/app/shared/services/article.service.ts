@@ -11,7 +11,9 @@ import {QueryParamsType} from "../../../types/queryParams.type";
 })
 export class ArticleService {
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient
+  ) {
   }
 
   public getPopular(): Observable<ArticleResponseType[]> {
