@@ -2,7 +2,7 @@
 @import "../../../assets/styles/mixins";
 
 .offer {
-  margin-bottom: 120px;
+  margin-bottom: 60px;
 
   .offer__carousel {
     position: relative;
@@ -93,7 +93,8 @@
 }
 
 .service {
-  margin-bottom: 120px;
+  padding-top: 60px;
+  margin-bottom: 60px;
 
   &__title {
     @include head-lora-38;
@@ -148,7 +149,8 @@
 
 .about {
   display: flex;
-  margin-bottom: 120px;
+  padding-top: 60px;
+  margin-bottom: 60px;
 
   &__image {
     position: relative;
@@ -233,7 +235,8 @@
 }
 
 .popular {
-  margin-bottom: 120px;
+  padding-top: 60px;
+  margin-bottom: 60px;
 
   &__title {
     @include head-lora-38;
@@ -265,7 +268,8 @@
 }
 
 .reviews {
-  margin-bottom: 120px;
+  padding-top: 60px;
+  margin-bottom: 60px;
   padding-left: 1px;
 
   &__title {
@@ -327,10 +331,12 @@
 }
 
 .contacts {
+ min-height: 502px;
   display: flex;
   column-gap: 26px;
   padding-right: 106px;
   box-sizing: border-box;
+  padding-top: 60px;
   margin-bottom: 120px;
 
   &__map {

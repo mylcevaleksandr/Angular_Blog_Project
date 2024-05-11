@@ -84,7 +84,7 @@
     </div>
   </div>
 </section>
-<section class="service container">
+<section id="offers" class="service container">
   <h1 class="service__title">Услуги, которые мы предлагаем</h1>
   <div class="service__cards">
     <div *ngFor="let service of services">
@@ -101,7 +101,7 @@
     </div>
   </div>
 </section>
-<section class="about container">
+<section id="about" class="about container">
   <div class="about__image">
     <img ngSrc="/assets/images/about-image.png" alt="about image" fill="true" priority="false">
   </div>
@@ -147,7 +147,7 @@
     </div>
   </div>
 </section>
-<section class="popular container">
+<section id="popular" class="popular container">
   <div class="popular__title">Популярные статьи из блога</div>
   <div class="popular__articles">
     <app-article-card *ngFor="let article of popularArticles" [article]="article">
@@ -161,7 +161,7 @@
     </svg>
   </a></div>
 </section>
-<section class="reviews container">
+<section id="reviews" class="reviews container">
   <div class="reviews__title">Отзывы о нашей работе</div>
   <div class="reviews__carousel">
     <a class="prev" (click)="owlCarRev.prev()"
@@ -207,7 +207,7 @@
     </a>
   </div>
 </section>
-<section class="contacts container">
+<section id="contacts" class="contacts container">
   <div class="contacts__map">
     <iframe
       src="https://yandex.ru/map-widget/v1/?um=constructor%3A7aa169ae01452d7bcdeb6ecb01a852e1bf1e8be20d5664e83e7ae28d938be39f&amp;source=constructor"

@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLogged$.subscribe((isLoggedIn: boolean) => {
       this.isLogged = isLoggedIn;
-      console.log(this.isLogged);
       if (this.isLogged) {
         this.getUserInfo();
       }
@@ -43,7 +42,6 @@ export class HeaderComponent implements OnInit {
         if (response.id && response.name && response.email) {
           this.authService.setUserInfo(response.id, response.name, response.email);
           this.user = this.authService.userName!;
-          console.log(this.user);
         }
       }
     });

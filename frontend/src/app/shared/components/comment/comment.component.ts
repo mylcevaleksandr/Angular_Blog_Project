@@ -5,6 +5,7 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 import {Subject} from "rxjs";
 import {HttpErrorResponse} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {AuthService} from "../../../core/auth/auth.service";
 
 @Component({
   selector: 'app-comment',
@@ -15,10 +16,12 @@ export class CommentComponent implements OnInit {
 
   public date: string = '';
   public time: string = "";
+  private isLogged: boolean = this.authService.getIsLoggedIn();
   @Input() comment!: CommentType;
   @Output() actionChange: Subject<any> = new Subject();
 
   constructor(
+    private authService: AuthService,
     private commentService: CommentService,
     private snackBar: MatSnackBar
   ) {
@@ -39,63 +42,70 @@ export class CommentComponent implements OnInit {
   }
 
   public leaveReaction(commentId: string, actionType: string): void {
-    if (!this.comment.action) {
-      switch (actionType) {
-        case "like":
-          this.addLike();
-          break;
-        case "dislike":
-          this.addDislike();
-          break;
+    if (this.isLogged) {
+      if (!this.comment.action) {
+        switch (actionType) {
+          case "like":
+            this.addLike();
+            break;
+          case "dislike":
+            this.addDislike();
+            break;
+        }
       }
-    }
-    if (this.comment.action === "like") {
-      switch (actionType) {
-        case "dislike":
-          this.remLike();
-          this.addDislike();
-          break;
-        case "removeLike":
-          this.remLike();
-          this.comment.action = undefined;
-          break;
+      if (this.comment.action === "like") {
+        switch (actionType) {
+          case "dislike":
+            this.remLike();
+            this.addDislike();
+            break;
+          case "removeLike":
+            this.remLike();
+            this.comment.action = undefined;
+            break;
+        }
       }
-    }
-    if (this.comment.action === "dislike") {
-      switch (actionType) {
-        case "like":
-          this.remDislike();
-          this.addLike();
-          break;
-        case "removeDislike":
-          this.remDislike();
-          this.comment.action = undefined;
-          break;
+      if (this.comment.action === "dislike") {
+        switch (actionType) {
+          case "like":
+            this.remDislike();
+            this.addLike();
+            break;
+          case "removeDislike":
+            this.remDislike();
+            this.comment.action = undefined;
+            break;
+        }
       }
-    }
-    if (actionType === 'violate') {
-      this.commentService.applyAction(commentId, actionType).subscribe({
-        next: (data: DefaultResponseType) => {
-          this.snackBar.open('Жалоба отправлена');
-        },
-        error: (err: HttpErrorResponse): void => {
-          if (err.status === 400) {
-            this.openSnackBar('Жалоба уже отправлена');
+      if (actionType === 'violate') {
+        this.commentService.applyAction(commentId, actionType).subscribe({
+          next: (data: DefaultResponseType) => {
+            this.openSnackBar('Жалоба отправлена');
+          },
+          error: (err: HttpErrorResponse): void => {
+            if (err.status === 400) {
+              this.openSnackBar('Жалоба уже отправлена');
+            }
           }
-        }
-      });
+        });
+      } else {
+        actionType = actionType === "removeLike" ? "like" : actionType;
+        actionType = actionType === "removeDislike" ? "dislike" : actionType;
+        this.commentService.applyAction(commentId, actionType).subscribe({
+          next: (data: DefaultResponseType) => {
+            if (!data.error) {
+              this.snackBar.open('Ваш голос учтен');
+              this.actionChange.next(actionType);
+            }
+          },
+          error: (err: HttpErrorResponse) => {
+            console.log(err);
+          }
+        });
+      }
     } else {
-      actionType = actionType === "removeLike" ? "like" : actionType;
-      actionType = actionType === "removeDislike" ? "dislike" : actionType;
-      this.commentService.applyAction(commentId, actionType).subscribe((data: DefaultResponseType) => {
-
-        if (!data.error) {
-          this.snackBar.open('Ваш голос учтен');
-          this.actionChange.next(actionType);
-        }
-      });
+      console.log(this.isLogged);
     }
-
   }
 
   private addLike() {
