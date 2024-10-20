@@ -19,7 +19,7 @@
                  && (signupForm.get('email')?.dirty||signupForm.get('email')?.touched)?'red':''}"
                  placeholder="Электронная почта" formControlName="email">
           <span
-            *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty||signupForm.get('email')?.touched)">email example: bob@google.com</span>
+            *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty||signupForm.get('email')?.touched)">email example: bob&#64;google.com</span>
         </div>
         <div class="signup_form-inputs-input">
           <input type="password" class="input"

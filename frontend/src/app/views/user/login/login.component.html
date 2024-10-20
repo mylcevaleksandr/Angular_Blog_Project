@@ -11,7 +11,7 @@
                  && (loginForm.get('email')?.dirty||loginForm.get('email')?.touched)?'red':''}"
                  placeholder="Электронная почта" formControlName="email">
           <span
-            *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty||loginForm.get('email')?.touched)">email example: bob@google.com</span>
+            *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty||loginForm.get('email')?.touched)">email example: bob&#64;google.com</span>
         </div>
         <div class="login_form-inputs-input">
           <input type="password" class="input"

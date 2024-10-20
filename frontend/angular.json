@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "IT_Logia_Diploma:build:production"
+              "buildTarget": "IT_Logia_Diploma:build:production"
             },
             "development": {
-              "browserTarget": "IT_Logia_Diploma:build:development"
+              "buildTarget": "IT_Logia_Diploma:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IT_Logia_Diploma:build"
+            "buildTarget": "IT_Logia_Diploma:build"
           }
         },
         "test": {
