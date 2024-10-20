@@ -55,6 +55,9 @@ export class ArticleComponent implements OnInit {
   }
 
   private getArticle(url: string): void {
+    this.offset = 0;
+    this.commentCount = 0;
+    this.comments = [];
     this.articleService.getArticle(url).subscribe((data: ArticleResponseType): void => {
       this.article = data;
       this.comments = data.comments;
@@ -104,8 +107,6 @@ export class ArticleComponent implements OnInit {
           return comment;
         });
       });
-    } else {
-      console.log(event);
     }
   }
 
